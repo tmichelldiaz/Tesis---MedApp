@@ -1,0 +1,40 @@
+[project]
+name = "medapp-backend"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "pymupdf>=1.24",
+    "httpx>=0.27",
+    "pydantic-settings>=2.4",
+    "tenacity>=9.0",
+    "pyyaml>=6.0",
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "python-multipart>=0.0.9",
+    "langchain>=1.0",
+    "langgraph>=1.0",
+    "langgraph-checkpoint-postgres>=3.1",
+    "langchain-openai>=0.3",
+    "sqlalchemy>=2.0",
+    "psycopg[binary]>=3.2",
+    "bcrypt>=4.2",
+    "pyjwt>=2.9",
+    "google-auth>=2.30",
+    "requests>=2.32",
+    "tzdata>=2024.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pillow>=10.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: llama a OpenRouter de verdad (requiere OPENROUTER_API_KEY)"]
+addopts = "-m 'not integration'"

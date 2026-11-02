@@ -2,23 +2,59 @@
   "expo": {
     "name": "MedApp",
     "slug": "MedApp",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.medirecord.medapp"
     },
     "android": {
+      "package": "com.medirecord.medapp",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "permissions": [
+        "READ_CALENDAR",
+        "WRITE_CALENDAR"
+      ],
+      "versionCode": 3
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "@react-native-community/datetimepicker",
+      "expo-font",
+      [
+        "expo-calendar",
+        {
+          "calendarPermission": "MedApp agrega tus citas médicas a un calendario propio en tu teléfono para que no se te olviden."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#034AA6",
+          "defaultChannel": "citas"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e60d05dc-6df7-4317-aba9-0cbc286d97b3"
+      }
+    },
+    "owner": "tmicheldiaz",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/e60d05dc-6df7-4317-aba9-0cbc286d97b3"
     }
   }
 }

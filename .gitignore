@@ -31,6 +31,7 @@ yarn-error.*
 *.pem
 
 # local env files
+.env
 .env*.local
 
 # typescript
@@ -39,3 +40,21 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Material de la tesis y de la sesión de trabajo (no forma parte del código)
+figuras/
+tesis_texto/
+.claude/
+modelos.txt
+mi-app/
+
+# Secretos y configuración local
+.env
+.env.*
+*.env
+cloudrun-env.yaml
+next*-env.yaml
+
+# Herramientas de desarrollo
+.claude/
+CLAUDE.md
